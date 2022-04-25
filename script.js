@@ -1,103 +1,77 @@
-const curEl_one = document.getElementsByClassName("left");
-const amountEl_one = document.getElementById("amount-one");
-const curEl_two = document.querySelectorAll("#currency-two .right");
-const amountEl_two = document.getElementById("amount-two");
+let rubone = document.querySelector(".RUB_one");
+let usdone = document.querySelector(".USD_one");
+let eurone = document.querySelector(".EUR_one");
+let gbpone = document.querySelector(".GBP_one");
 
-const active = document.querySelectorAll(".active");
+let rubtwo = document.querySelector(".RUB_two");
+let usdtwo = document.querySelector(".USD_two");
+let eurtwo = document.querySelector(".EUR_two");
+let gbptwo = document.querySelector(".GBP_two");
 
-const rateEl = document.getElementById("rate");
+let rateleft = document.querySelector('.rate-left');
+let rateright = document.querySelector('.rate-right');
 
-console.log(curEl_one);
+let inputleft = document.querySelector(".input-left"); 
+let inputright = document.querySelector(".input-right");
 
+let leftCurrency;
+let rightCurrency;
+let entervalue;
 
-for(let i=0; i < curEl_one.length; i++){
-
-    curEl_one[i].addEventListener('click', function(event) {
-
-            if(curEl_one[i].includes(active)){
-            const curOneVal = curEl_one[i].innerText;
-            const curTwoVal = curEl_two[i].innerText;
-            fetch(`https://api.exchangerate.host/latest?base=${curOneVal}&symbols=${curTwoVal} `) 
-            .then((res) => res.json())
-            .then((data) =>{
-                console.log(data);
-            })
+function convert () {
+    entervalue = Number(inputleft.value);
+        fetch(`https://api.exchangerate.host/latest?base=${leftCurrency}&symbols=${rightCurrency}`)
+        .then(res => res.json())
+        .then(data => {
+            rateleft.innerText = `1 ${leftCurrency} = ${data.rates[rightCurrency]} ${rightCurrency}`;
+            inputright.value = parseFloat(entervalue* data.rates[rightCurrency]).toFixed(4);
+        })
         
+        fetch(`https://api.exchangerate.host/latest?base=${rightCurrency}&symbols=${leftCurrency}`)
+        .then(res => res.json())
+        .then(data => {
+            rateright.innerText = `1 ${rightCurrency} = ${data.rates[leftCurrency]} ${leftCurrency}`;
+        })
     }
-    else{
-        console.log("hsgdjj");
-    }
-    })
 
+inputleft.addEventListener('keyup', convert);
 
-}
+rubone.addEventListener('click', () => {
+    leftCurrency = rubone.innerText;
+    convert();
+});
 
+usdone.addEventListener('click', () => {
+    leftCurrency = usdone.innerText;
+    convert();
+});
 
-// for(let i=0; i < curEl_one.length; i++){
-//     curEl_one[i].addEventListener('click', function (event) {
-//                 const curOneVal = curEl_one[i].innerText; 
-//                 let curTwoVal = curEl_two[i].innerText; 
-//         fetch(`https://api.exchangerate.host/latest?base=${curOneVal}`)
-//             .then((res) => res.json())
-//             .then((data) => {
-//                 console.log(data);
-//                 document.getElementById("amount-one").innerHTML = data;
-//                 const rate = data.rates[curTwoVal];
+eurone.addEventListener('click', () => {
+    leftCurrency = eurone.innerText;
+    convert();
+});
 
-//                 rateEl.innerText = `1 ${curOneVal} = ${rate.toFixed(4)} ${curTwoVal}`;
-//                 amountEl_two.value = (amountEl_one.value * rate).toFixed(2);
-//     })
-// })
-// }
+gbpone.addEventListener('click', () => {
+    leftCurrency = gbpone.innerText;
+    convert();
+});
 
+rubtwo.addEventListener('click', () => {
+    rightCurrency = rubtwo.innerText;
+    convert();
+});
 
+usdtwo.addEventListener('click', () => {
+    rightCurrency = usdtwo.innerText;
+    convert();
+});
 
+eurtwo.addEventListener('click', () => {
+    rightCurrency = eurtwo.innerText;
+    convert();
+});
 
-
-
-
-
-
-
-// for(let i=0; i < curEl_one.length; i++){
-//     curEl_two[i].addEventListener('click', function (event) {
-//                 const curOneVal = curEl_two[i].innerText; 
-//                 let curTwoVal = curEl_two[i].innerText; 
-//         fetch(`https://api.exchangerate.host/latest?base=${curOneVal}&symbol=${curTwoVal}`)
-//             .then((res) => res.json())
-//             .then((data) => {
-//                 console.log(data);
-//                 document.getElementById("amount-one").innerHTML = data;
-//                 const rate = data.rates[curTwoVal];
-                
-//                 rateEl.innerText = `1 ${curOneVal} = ${rate.toFixed(4)} ${curTwoVal}`;
-//                 amountEl_two.value = (amountEl_one.value * rate).toFixed(2);
-//     })
-// })
-// }
-
-
-
-
-
-
-
-
-
-// console.log(curEl_one);
-// const rateEl = document.getElementById("rate");
-// for (let i = 0; i < curEl_one.length; i++) {
-//     curEl_one[i].addEventListener('click', function (event) { 
-//         const curOneVal = curEl_one[i].innerText; 
-//         let curTwoVal = curEl_two[i].innerText; 
-//         fetch(`https://api.exchangerate.host/latest?base=${curOneVal}&symbol=${curTwoVal}`)
-//             .then((res) => res.json())
-//             .then((data) => {
-//                 const rate = data.rates[curTwoVal];
-//                 console.log(curTwoVal);
-//             });
-//     });
-// }
-
-
-
+gbptwo.addEventListener('click', () => {
+    rightCurrency = gbptwo.innerText;
+    convert();
+});

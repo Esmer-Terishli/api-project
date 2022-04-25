@@ -4,19 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Api-project</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="menu">
-
         <div class="menu-img">
         <img src="./images/Asset 1@3x 1.png">
-
         </div>
-
         <div class="menu-text">
-
             <ul>
                 <li style="font-weight: bold; color: black;">БАНК</li>
                 <li>БИЗНЕС</li>
@@ -27,9 +23,6 @@
                 <li>РАЗВЛЕЧЕНИЯ</li>
             </ul>
         </div>
-
-
-
         <div class="menu-button">
             <button>ВОЙТИ</button>
         </div>
@@ -39,57 +32,40 @@
         <h1>Конвертер валют онлайн</h1>
     </div>
 
-
-
     <div class="currency">
-
         <div class="value">
             <p class="val-p">У меня есть </p>
             <div class="btn">
                 <ul id="currency-one">
-                    <li class="left active" id="right" value="RUB">RUB</li>
-                    <li class="left" id="right" value="USD">USD</li>
-                    <li class="left" id="right" value="EUR">EUR</li>
-                    <li class="left" value="GBP">GBP</li>
-
+                    <li class="RUB_one">RUB</li>
+                    <li class="USD_one">USD</li>
+                    <li class="EUR_one">EUR</li>
+                    <li class="GBP_one">GBP</li>
                 </ul>
             </div>
 
-
             <div class="cost">
-                <input type="number" id="amount-one" placeholder="0" >
-                <p class="rate" id="rate">  </p>
+                <input class="input-left" type="number"  placeholder="0" >
+                <p class="rate-left">  </p>
             </div>
-
         </div>
-
-
-
 
         <div class="change">
             <p class="val-p">Хочу приобрести</p>
             <div class="btn">
                 <ul id="currency-two">
-                    <li class="right" id="right" value="RUB">RUB</li>
-                    <li class="right" id="right" value="USD">USD</li>
-                    <li class="right" id="right" value="EUR">EUR</li>
-                    <li class="right" value="GBP">GBP</li>
-
+                    <li class="RUB_two">RUB</li>
+                    <li class="USD_two">USD</li>
+                    <li class="EUR_two">EUR</li>    
+                    <li class="GBP_two">GBP</li>
                 </ul>
             </div>
-
-
             <div class="cost">
-                <input type="number" id="amount-two" placeholder="0" >
-                <p>1 USD = 73.8896 RUB</p>
+                <input class="input-right" type="number"  placeholder="0" >
+                <p class="rate-right">  </p>
             </div>
-
         </div>
     </div>
-
-
-
-
     <script src="script.js"></script>
 </body>
 </html>

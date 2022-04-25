@@ -1,28 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&family=Oswald:wght@400;500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&family=Oswald:wght@400;500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
 .menu {
     display: flex;
     justify-content: space-between;
     background-color: #F5F5F6;
     height: 60px;
 }
-
 .menu-text {
     width: 60%;
     margin: auto;
 }
-
 .menu-text ul {
     display: flex;
     justify-content: space-between;
 }
-
 .menu-text li {
     display: inline;
     /* margin-left: 40px;   */
@@ -33,17 +28,13 @@
     color: #959BA4;
     cursor: pointer;
 }
-
 .menu-img {
     margin: auto;
 }
-
 .menu-button {
     float: right;
     margin: auto;
-
 }
-
 .menu-button button {
     width: 60px;
     height: 30px;
@@ -54,9 +45,6 @@
     border: 1px solid white;
     border-radius: 5px;
 }
-
-
-
 .text h1 {
     margin-top: 50px;
     margin-left: 20.5%;
@@ -66,62 +54,45 @@
     font-size: 36px;
     line-height: 42px;
     color: #000000;
-
 }
-
 .currency {
     display: flex;
     justify-content: space-around;
     width: 75%;
     margin: 3% 11.5%;
 }
-
 .val-p {
     font-family: 'Roboto';
     font-weight: 400;
     line-height: 14px;
     color: #9F9F9F;
 }
-
 .btn {
     margin-top: 20px;
     border: 1px solid #959BA4;
     border-radius: 5px;
     width: 100%;
 }
-
 .btn li {
     display: inline;
     padding: 20px;
     color: #959BA4;
     width: 25%;
 }
-
-.btn li.active {
-    background-color: #833AE0;
-    cursor: pointer;
-    color: white;
-}
-
 .btn ul {
     display: flex;
-
 }
-
 #right {
     border-right: 1px solid #959BA4;
 }
-
 .btn li:hover {
     background-color: #833AE0;
     cursor: pointer;
     color: white; 
 }
-
 .cost p {
     color: #959BA4;
 }
-
 .cost {
     margin-top: 30px;
     border: 1px solid #959BA4;
@@ -129,13 +100,11 @@
     border-radius: 5px;
     height: 100px;
 }
-
 .cost input {
     border-radius: 5px;
     border: 1px solid #959BA4;
     padding: 3px 5px;
 }
-
 .cost p {
     margin: 10px;
 }
