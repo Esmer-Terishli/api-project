@@ -14,12 +14,12 @@ let rateright = document.querySelector('.rate-right');
 let inputleft = document.querySelector(".input-left"); 
 let inputright = document.querySelector(".input-right");
 
-let leftCurrency;
-let rightCurrency;
+let leftCurrency="RUB";
+let rightCurrency="USD"
 let entervalue;
 
 function convert () {
-    entervalue = Number(inputleft.value);
+    entervalue = Number(inputleft.value.replace(",", "."));
         fetch(`https://api.exchangerate.host/latest?base=${leftCurrency}&symbols=${rightCurrency}`)
         .then(res => res.json())
         .then(data => {
